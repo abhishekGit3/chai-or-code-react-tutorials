@@ -3,4 +3,4 @@ function Chai(){
         <h2>hello react </h2>
     )
 }
-export default Chai()
+export default Chai
