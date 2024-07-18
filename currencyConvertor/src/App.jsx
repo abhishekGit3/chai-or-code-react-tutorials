@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      
+      <h1>CURRENCY CONVERTOR</h1>
     </>
   )
 }
