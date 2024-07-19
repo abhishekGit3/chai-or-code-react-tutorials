@@ -1,4 +1,5 @@
 import React from 'react'
+import { useId } from 'react';
 
 function InputBox({
   label,
@@ -12,16 +13,18 @@ function InputBox({
   className = "",
 }) {
  
+const amountInputId = useId()
+
 
   return (
       <div className={`bg-white p-3 rounded-lg text-sm  ${className} `}>
           <div className="w-1/2">
-              <label  className="text-black/40 mb-2 inline-block">
+              <label  htmlFor={amountInputId}className="text-black/40 mb-2 inline-block">
                   {label}
               </label>
               
               <input
-                  
+                  id={amountInputId}
                   className="outline-none w-full bg-transparent py-1.5"
                   type="number"
                   placeholder="Amount"
@@ -29,6 +32,7 @@ function InputBox({
                   value={amount}
                   onChange={(event) => OnAmountChange && OnAmountChange(Number(event.target.value))}
               />
+
           </div>
           <div className="w-1/2 flex flex-wrap justify-end text-right">
               <p className="text-black/40 mb-2 w-full">Currency Type</p>
@@ -39,9 +43,11 @@ function InputBox({
                   onChange={(event) => OncurrencyChange && OncurrencyChange(event.target.value)}
                   disabled={currencyDisable}>
                   
-                      <option value="usd">
-                          usd
-                      </option>
+             {currencyOptions.map((currency) =>(
+                <option key={currency} value={currency}>
+                   {currency}
+                </option>
+             ))}
               
               </select>
           </div>
