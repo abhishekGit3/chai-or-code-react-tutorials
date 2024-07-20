@@ -34,7 +34,7 @@ const amountInputId = useId()
               />
 
           </div>
-          <div className="w-1/2 flex flex-wrap justify-end text-right">
+          <div className="w-1/2 flex justify-end text-right right-0">
               <p className="text-black/40 mb-2 w-full">Currency Type</p>
               
               <select
