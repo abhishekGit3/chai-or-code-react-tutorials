@@ -1,7 +1,7 @@
 import { useContext , createContext } from 'react'
 
 export const todoContext = createContext({
-    todo:[
+    todos:[
         {
             id: 1 ,
             todoTitle: "todo messege",
