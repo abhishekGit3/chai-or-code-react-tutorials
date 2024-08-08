@@ -35,8 +35,8 @@ function App() {
   },[]);
 
   useEffect(() =>{
-    localStorage.setItem("todos", JSON.stringify(todos));
-  },[todos]);
+    localStorage.setItem("todos", JSON.stringify(todos))
+  },[todos])
 
 
   return (
