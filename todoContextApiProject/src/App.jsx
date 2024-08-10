@@ -15,7 +15,7 @@ function App() {
     setTodos((prev) => prev.map((prevTodo) =>{
       prevTodo.id === id ? todoTitle : prevTodo
     }))
-  }
+  }               
   
   const deleteTodo = (id)=>{
     setTodos((prev) =>
@@ -24,7 +24,7 @@ function App() {
 
   const toggleComplete = (id) =>{
     setTodos((prev)=> prev.map((prevTodo) =>{
-      prevTodo.id  === id ? {...todos ,  completed: !prevTodo.completed} : prevTodo
+      prevTodo.id  === id ? {...prevTodo ,  completed: !prevTodo.completed} : prevTodo
      }))
   }
 
