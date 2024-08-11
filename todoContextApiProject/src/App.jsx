@@ -7,15 +7,18 @@ function App() {
 
   const [todos , setTodos] = useState([]);
   
-  const addTodo = (todoTitle) =>{
-    setTodos((prev) => [{id: Date.now(),...todoTitle},...prev]);
+  const addTodo = (todo) =>{
+    setTodos((prev) => [{id: Date.now(),...todo},...prev]);
   }
  
-  const updateTodo = (id , todoTitle) =>{
-    setTodos((prev) => prev.map((prevTodo) =>{
-      prevTodo.id === id ? todoTitle : prevTodo
-    }))
-  }               
+  const updateTodo = (id, todo) => {
+    setTodos((prev) =>
+      prev.map((prevTodo) =>
+        prevTodo.id === id ? { ...prevTodo, ...todo } : prevTodo
+      )
+    );
+  };
+                
   
   const deleteTodo = (id)=>{
     setTodos((prev) =>
@@ -52,9 +55,11 @@ function App() {
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
             {todos.map((todo) =>(
+
               <div className="w-full" key={todo.id}>
                 <TodoItem todo = {todo}/>
               </div>
+
             ))}
           </div>
         </div>
