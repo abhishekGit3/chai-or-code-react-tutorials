@@ -1,4 +1,5 @@
-import {createSlice , nanoId} from '@reduxjs/toolkit';
+
+import {createSlice , nanoid} from '@reduxjs/toolkit';
 
 const initialState = {
     todos:[
