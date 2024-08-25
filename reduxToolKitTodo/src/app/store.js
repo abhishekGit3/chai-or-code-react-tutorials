@@ -1,3 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
-
-export const storage  =  configureStore({})
+import todoReducer from '../features/todo/todoSlice'
+export const storage  =  configureStore({
+    reducer : todoReducer
+})
