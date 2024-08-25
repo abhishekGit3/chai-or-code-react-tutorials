@@ -1,14 +1,17 @@
+import React from "react"
+import { useDispatch } from "react-redux";
+import  {addTodo , removeTodo} from "../features/todo/todoSlice"
+
 function AddTodo() {
 
-    const [input, setInput] = useState('')
-    const dispatch = useDispatch()
+const [input , setInput] = React.useState('');
+const dispatch = useDispatch();
 
-    const addTodoHandler = (e) => {
-        e.preventDefault()
-        dispatch(addTodo(input))
-        setInput('')
-    }
-
+const addTodoHandler = (event) =>{
+  event.preventDefault()
+  dispatch(addTodo(input))
+  setInput('');
+}
   return (
     <form onSubmit={addTodoHandler} className="space-x-3 mt-12">
       <input
