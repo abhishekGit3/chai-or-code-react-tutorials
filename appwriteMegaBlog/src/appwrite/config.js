@@ -1,5 +1,5 @@
 import conf from '../conf.js'
-import { ID , Databases , Client , Storage , Query } from 'appwrite'
+import {Databases , Client , Storage , Query} from 'appwrite'
 
 export class Service{
     client = new Client();
@@ -67,8 +67,41 @@ export class Service{
        
     }
 
-}
 
+    async getPost (slug){
+        try {
+            return await this.database.getDocument(
+                donf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug        
+            )
+          
+        } catch (error) {
+            console.log("apprite : get post : error",error);
+            return false;
+        }
+    }
+
+    async getPosts (){
+        try {
+            return await this.database.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                [
+                    
+                    Query.equal['status','active']
+                ]
+            )
+        } catch (error) {
+            console.log("apprite : list post : error",error);
+            return false;
+        }
+    }
+
+    // file upload service
+
+    
+}
 
 const services = new Service()
 export default services
