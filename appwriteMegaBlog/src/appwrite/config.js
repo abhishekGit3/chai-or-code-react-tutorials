@@ -15,13 +15,56 @@ export class Service{
     }
 
     async createPost ({title , slug , content , featuredImage , status , userId}){
-        return await this.database.createDocument( 
-             conf.appwriteDatabaseId,
-             conf.appwriteProjectId,
-             {
-                
-             }
-        )
+        try{
+            return await this.database.createDocument( 
+                conf.appwriteDatabaseId,
+                conf.  appwriteCollectionId,
+                slug,
+                {
+                   title,
+                   content,
+                   featuredImage,
+                   status,
+                   userId
+                }
+           )
+        } catch(error){
+            throw error;
+        }
+       
+    }
+
+    async updatePost (slug , {title , content, featuredImage , status}){
+        try {
+            return await this.database.updateDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug,
+                {
+                    title,
+                    content,
+                    featuredImage,
+                    status                 
+                }
+            )
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async deletePost(slug){
+        try {
+             await this.database.deleteDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug   
+            )
+            return true;
+        } catch (error) {
+            console.log("apprite : delete post : error",error);
+            return false;
+        }
+       
     }
 
 }
