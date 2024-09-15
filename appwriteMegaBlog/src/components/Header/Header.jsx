@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import { Container , logoutBtn , Logo} from "../index.js"
+import { Container , LogoutBtn , Logo} from "../index.js"
 
 function Header() {
   const authStatus = useSelector((state) => state.authStatus)
@@ -55,6 +55,11 @@ function Header() {
                 </li>
                 ) : null
               )
+            )}
+            {authStatus && (
+              <li>
+                <LogoutBtn/>
+              </li>
             )}
             </ul>
        
