@@ -4,10 +4,11 @@ import Input from './Input';
 import Login from './Login'
 import Button from './Button';
 import Signup from './Signup';
+import PostCard from './PostCard';
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import LogoutBtn from "./Header/LogoutBtn";
-import Container from "./container/Container";
 import PostForm from './post-form/PostForm';
-export { Header ,  Footer , Logo , Container ,
-LogoutBtn , Button , Input , RTE , Signup , Login , PostForm}
+import Container from "./container/Container";
+export { Header ,  Footer , Logo , Container , LogoutBtn ,
+Button , Input , RTE , Signup , Login , PostForm , PostCard }

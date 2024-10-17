@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import appwriteServices from '../appwrite/config'
-import { Logo , LogoutBtn , Button } from './index'
 
 function PostCard({title , featuredImage , $id}) {
   
