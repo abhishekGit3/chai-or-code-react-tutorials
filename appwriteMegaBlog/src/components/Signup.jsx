@@ -5,7 +5,7 @@ import {Input , Button ,  Logo} from './index'
 import { useNavigate , Link } from 'react-router-dom'
 import authSlice, { login } from '../store/authSlice'
 import authService from '../appwrite/auth'
-import { register , handleSubmit} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 function Signup() {
   const dispatch = useDispatch();
@@ -103,9 +103,7 @@ function Signup() {
              
             </div>
 
-    </div>
-    
-  
+    </div> 
   )
 }
 
